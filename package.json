@@ -1,0 +1,5 @@
+"homepage": "https://GitHub-Status.github.io/FreeFlowWeb",
+"scripts": {
+  "predeploy": "vite build",
+  "deploy": "gh-pages -d dist",
+}
