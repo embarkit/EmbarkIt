@@ -26,4 +26,16 @@ jobs:
 
       - name: Check Code for Vulnerabilities
         run: npm audit --audit-level=critical
-      
+
+      - name: Update Dependencies
+        run: npm update
+
+      - name: Security Code Scanning
+        uses: github/codeql-action/init@v1
+        with:
+          languages: nodejs
+
+      - name: Upload SARIF results
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: codeql-results/codeql-results.sarif
