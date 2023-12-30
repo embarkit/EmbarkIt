@@ -33,11 +33,14 @@ jobs:
       - name: Setup CodeQL
         uses: github/codeql-action/init@v2
 
+      - name: Debug Info
+        run: ls -R
+
       - name: Security Code Scanning
         uses: github/codeql-action/analyze@v2
 
       - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: codeql-results/codeql-results.sarif
+          sarif_file: ./codeql-results/codeql-results.sarif
           
