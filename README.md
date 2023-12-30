@@ -1,5 +1,10 @@
 # EmbarkIt 🚀
-Join us in contributing to Embarkit's open-source codebase and bringing new ideas to the table. 
+Join us in contributing to Embarkit's open-source codebase and bringing new ideas to the table.    
+Learn along with us!    
+
+**Stack**:
+1. React
+2. Typescript
 
 ## Local Setup
 
@@ -8,41 +13,25 @@ Join us in contributing to Embarkit's open-source codebase and bringing new idea
     git clone https://github.com/embarkit/EmbarkIt.git
     ```
 
-2. **Change Directory:**
-    ```bash
-    cd EmbarkIt
-    ```
+2. **Change Directory:** `cd EmbarkIt`
 
 3. **Install Dependencies:**
-    - If you're using npm:
-        ```bash
-        npm install
-        ```
-    - If you're using yarn:
-        ```bash
-        yarn
-        ```
-    - If you're using pnpm:
-        ```bash
-        pnpm install
-        ```
+    ```bash
+    npm install
+    # yarn
+    # pnpm install
+    ```
 
 4. **Run the Application:**
-    - If you're using npm:
-        ```bash
-        npm run dev
-        ```
-    - If you're using yarn:
-        ```bash
-        yarn dev
-        ```
-    - If you're using pnpm:
-        ```bash
-        pnpm run dev
-        ```
-        
+    ```bash
+    npm run dev
+    # yarn dev
+    # pnpm run dev
+    ```
    This will start the development server, and you can view the application at [http://localhost:3000](http://localhost:3000) in your browser.
 
-That's it! You've successfully set up and run EmbarkIt locally on your machine. If you encounter any issues or have questions, feel free to reach out to us.
+That's it!    
+You've successfully set up and run EmbarkIt locally on your machine.    
+If you encounter any issues or have questions, feel free to reach out to us.
 
-Happy coding!
+**Happy coding!**
