@@ -25,8 +25,8 @@ jobs:
         run: npm install --production
 
       - name: Run Security Checks
+        id: security-checks
         run: |
-          npm audit || true
           vulnerabilities=$(npm audit --json)
           echo "::set-output name=vulnerabilities::$vulnerabilities"
 
@@ -34,8 +34,18 @@ jobs:
         run: npm audit --audit-level=critical || true
 
       - name: Add Labels to Pull Request
-        uses: actions/gh@v2
+        uses: actions/github-script@v4
         with:
-          args: "issue add-labels ${{ github.event_name }} ${{ github.repository }} ${{ github.event.inputs.number }} ${{ steps.security.outputs.vulnerabilities | fromJson | keys | join(',') }}"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const vulnerabilities = JSON.parse(process.env.vulnerabilities);
+            const labelsToAdd = Object.keys(vulnerabilities.advisories).map(advisory => `vulnerability:${advisory}`);
+            const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+            octokit.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: labelsToAdd
+            });
         if: always()
         
