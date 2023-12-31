@@ -28,7 +28,11 @@ jobs:
         id: security-checks
         run: |
           vulnerabilities=$(npm audit --json || echo '{"advisories":{}}')
-          echo "::set-output name=vulnerabilities::$vulnerabilities"
+          if [ "$vulnerabilities" == "null" ]; then
+            echo '{"advisories":{}}'
+          else
+            echo "::set-output name=vulnerabilities::$vulnerabilities"
+          fi
 
       - name: Check Code for Vulnerabilities
         run: npm audit --audit-level=critical || true
