@@ -33,3 +33,7 @@ jobs:
       - name: Check Code for Vulnerabilities
         run: npm audit --audit-level=critical || true
 
+      - name: Display Vulnerabilities
+        run: echo "$vulnerabilities"
+
+      
