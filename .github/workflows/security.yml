@@ -37,19 +37,25 @@ jobs:
       - name: Check Code for Vulnerabilities
         run: npm audit --audit-level=critical || true
 
-      - name: Add Labels to Pull Request
+      - name: Remove Labels from Pull Request
         uses: actions/github-script@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const vulnerabilities = JSON.parse(process.env.vulnerabilities);
-            const labelsToAdd = Object.keys(vulnerabilities.advisories).map(advisory => `vulnerability:${advisory}`);
             const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
-            octokit.rest.issues.addLabels({
+            const currentLabels = await octokit.rest.issues.listLabelsOnIssue({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              labels: labelsToAdd
+              issue_number: context.payload.pull_request.number
             });
+            const labelsToRemove = currentLabels.data.map(label => label.name).filter(label => label.startsWith('vulnerability:'));
+            if (labelsToRemove.length > 0) {
+              await octokit.rest.issues.removeLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels: labelsToRemove
+              });
+            }
         if: always()
         
