@@ -34,4 +34,4 @@ That's it!
 You've successfully set up and run EmbarkIt locally on your machine.    
 If you encounter any issues or have questions, feel free to reach out to us.
 
-**Happy coding!**
+**Happy Coding All**
