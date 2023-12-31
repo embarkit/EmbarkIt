@@ -28,32 +28,8 @@ jobs:
         id: security-checks
         run: |
           vulnerabilities=$(npm audit --json || echo '{"advisories":{}}')
-          if [ "$vulnerabilities" == "null" ]; then
-            echo '{"advisories":{}}'
-          else
-            echo "::set-output name=vulnerabilities::$vulnerabilities"
-          fi
+          echo "::set-output name=vulnerabilities::$vulnerabilities"
 
       - name: Check Code for Vulnerabilities
         run: npm audit --audit-level=critical || true
 
-      - name: Remove Labels from Pull Request
-        uses: actions/github-script@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { data: currentLabels } = await github.rest.issues.listLabelsOnIssue({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number
-            });
-            const labelsToRemove = currentLabels.map(label => label.name).filter(label => label.startsWith('vulnerability:'));
-            if (labelsToRemove.length > 0) {
-              await github.rest.issues.removeLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                name: labelsToRemove
-              });
-            }
-            
