@@ -6,7 +6,7 @@ By contributing to the EmbarkIt open-source project, you agree to the following 
 
 1. **License Grant:** You grant EmbarkIt and its users a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable license to reproduce, modify, display, perform, sublicense, and distribute your contributions.
 
-2. **Code of Conduct:** All contributors must adhere to the project's [Code of Conduct](docs/code-of-conduct.md). Any violation may result in your contributions being rejected or further actions taken.
+2. **Code of Conduct:** All contributors must adhere to the project's [Code of Conduct](CODE_OF_CONDUCT.md). Any violation may result in your contributions being rejected or further actions taken.
 
 3. **Ownership:** Your contributions represent your original work. If you include third-party code, ensure compliance with the relevant licenses.
 
