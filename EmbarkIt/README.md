@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# EmbarkIt 🚀
+Join us in contributing to Embarkit's open-source codebase and bringing new ideas to the table.    
+Learn along with us!    
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Stack**:
+1. React
+2. Typescript
 
-Currently, two official plugins are available:
+## Local Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/embarkit/EmbarkIt.git
+    ```
 
-## Expanding the ESLint configuration
+2. **Change Directory:** `cd EmbarkIt`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3. **Install Dependencies:**
+    ```bash
+    npm install
+    # yarn
+    # pnpm install
+    ```
 
-- Configure the top-level `parserOptions` property like this:
+4. **Run the Application:**
+    ```bash
+    npm run dev
+    # yarn dev
+    # pnpm run dev
+    ```
+   This will start the development server, and you can view the application at [http://localhost:3000](http://localhost:3000) in your browser.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+That's it!    
+You've successfully set up and run EmbarkIt locally on your machine.    
+If you encounter any issues or have questions, feel free to reach out to us.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Happy Coding All**
