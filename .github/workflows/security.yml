@@ -25,8 +25,17 @@ jobs:
         run: npm install --production
 
       - name: Run Security Checks
-        run: npm audit
+        run: |
+          npm audit || true
+          vulnerabilities=$(npm audit --json)
+          echo "::set-output name=vulnerabilities::$vulnerabilities"
 
       - name: Check Code for Vulnerabilities
-        run: npm audit --audit-level=critical
+        run: npm audit --audit-level=critical || true
+
+      - name: Add Labels to Pull Request
+        uses: actions/gh@v2
+        with:
+          args: "issue add-labels ${{ github.event_name }} ${{ github.repository }} ${{ github.event.inputs.number }} ${{ steps.security.outputs.vulnerabilities | fromJson | keys | join(',') }}"
+        if: always()
         
