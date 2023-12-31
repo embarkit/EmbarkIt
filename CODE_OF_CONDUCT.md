@@ -28,7 +28,7 @@ Examples of unacceptable behavior include, but are not limited to:
 
 ## Reporting Violations
 
-If you witness or experience behavior that violates this Code of Conduct, please contact the project maintainers at [conduct@embarkit.com](mailto:conduct@embarkit.com). All reports will be kept confidential.
+If you witness or experience behavior that violates this Code of Conduct, please contact the project maintainers at [conduct@embarkit.com](mailto:conduct@embarkit.org). All reports will be kept confidential.
 
 ## Enforcement
 
