@@ -1,0 +1,33 @@
+name: Security Scan
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Security Scan
+        run: npm audit --json --audit-level=critical
+
+      - name: Upload Security Report
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: security-report
+          path: npm-audit-report.json
+          
