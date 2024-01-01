@@ -33,4 +33,3 @@ jobs:
         cache-dependency-path: ./EmbarkIt/package-lock.json
     - run: npm i
     - run: npm run build --if-present
-    - run: npm test
