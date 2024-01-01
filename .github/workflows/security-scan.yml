@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+
+defaults:
+  run:
+    working-directory: ./EmbarkIt
 
 jobs:
   security-scan:
