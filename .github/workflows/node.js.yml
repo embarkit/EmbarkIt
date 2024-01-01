@@ -9,14 +9,13 @@ on:
   pull_request:
     branches: [ "main" ]
 
-defaults:
-  run:
-    working-directory: ./EmbarkItChange
-
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./EmbarkIt
 
     strategy:
       matrix:
