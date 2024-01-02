@@ -1,10 +1,9 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/EmbarkIt/"
     schedule:
       interval: "daily"
       timezone: "Asia/Kolkata"
-    open-pull-requests-limit: 5
     labels:
-      - "security"
+      - "dependencies"
