@@ -53,7 +53,6 @@ Your contributions play a crucial role in enhancing EmbarkIt for all users.
 EmbarkIt is more than just a project; it's a collaborative effort. Connect with fellow professionals, share your expertise, and join hands to build something remarkable:
 
 - **Collaboration Forums:** Discuss ideas, share updates, and collaborate with the community on our [Forums](https://community.embarkit.org).
-- **Discord Channel:** Join our Discord server for real-time collaboration and discussions [here](https://discord.gg/embarkit).
 
 ## Benefits of Open-Source Collaboration
 
